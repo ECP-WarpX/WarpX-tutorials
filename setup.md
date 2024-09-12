@@ -19,7 +19,7 @@ conda install -y -n base conda-libmamba-solver
 conda config --set solver libmamba
 conda config --set auto_activate_base false
 ~~~
-{: .source}
+{: .language-bash}
 
 
 Create a virtual environment for WarpX and install the dependencies. 
@@ -29,7 +29,7 @@ lapackpp "openpmd-api=*=mpi_mpich*" openpmd-viewer python make numpy pandas scip
 "fftw=*=mpi_mpich*" pkg-config matplotlib mamba mpich mpi4py ninja pip virtualenv
 conda activate warpx
 ~~~
-{: .source}
+{: .language-bash}
 
 
 ## Build WarpX
@@ -39,13 +39,12 @@ Get the source code
 git clone https://github.com/ECP-WarpX/WarpX.git $HOME/src/warpx
 cd $HOME/src/warpx
 ~~~
-{: .source}
-
+{: .language-bash}
 Configure the build
 ~~~
 cmake -S . -B build
 ~~~
-{: .source}
+{: .language-bash}
 
 When configuring, you can pass different flags that enble or disable various options.  
 For example: `cmake -S . -B build -DWarpX_DIMS=1 -DCMAKE_BUILD_TYPE=Debug`
@@ -56,12 +55,12 @@ For these tutorials, we compile in 1D, 2D, 3D and enable FFT calculations.
 ~~~
 cmake -S . -B build -DWarpX_DIMS="1;2;3" -DWarpX_FFT=ON
 ~~~
-{: .source}
+{: .language-bash}
 Finally, compile!
 ~~~
 cmake --build build -j 4
 ~~~
-{: .source}
+{: .language-bash}
 The executables will appear in `build/bin/`.
 
 
