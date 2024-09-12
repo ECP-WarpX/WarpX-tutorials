@@ -8,8 +8,9 @@ Here you can find a guide on how to set up your system to be able to run and ana
 Let's roll 💃🕺.  
 
 
-## Install the dependencies with Conda (Windows, macOS, Linux)
+## Install the dependencies 
 
+We use Conda, that work on most opertive system (Windows, macOS, Linux).  
 As a first step get [Conda](https://docs.conda.io/en/latest/) and configure it with `libmamba`. 
 
 ~~~
@@ -46,32 +47,22 @@ cmake -S . -B build
 ~~~
 {: .source}
 
-When configuring, you can pass different flags that enble or disable various options. 
-For example:
-~~~
-cmake -S . -B build -DWarpX_DIMS=1 -DCMAKE_BUILD_TYPE=Debug
-~~~
+When configuring, you can pass different flags that enble or disable various options.  
+For example: `cmake -S . -B build -DWarpX_DIMS=1 -DCMAKE_BUILD_TYPE=Debug`
 will compile the code in 1D geometry and in debug mode.  
 You can find the list of the build options and their default values 
-[here](https://warpx.readthedocs.io/en/latest/install/cmake.html#build-options). 
+[here](https://warpx.readthedocs.io/en/latest/install/cmake.html#build-options).  
 For these tutorials, we compile in 1D, 2D, 3D and enable FFT calculations.
 ~~~
 cmake -S . -B build -DWarpX_DIMS="1;2;3" -DWarpX_FFT=ON
 ~~~
-
-
-
-
-# compile
-#   on Windows:          --config RelWithDebInfo
+{: .source}
+Finally, compile!
+~~~
 cmake --build build -j 4
-
-# executables for WarpX are now in build/bin/
-
-
-
-
-
+~~~
+{: .source}
+The executables will appear in `build/bin/`.
 
 
 {% include links.md %}
