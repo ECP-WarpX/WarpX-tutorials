@@ -1,0 +1,6 @@
+geometry.dims = 3
+geometry.prob_lo = 0 0 0 
+geometry.prob_hi = 1 1 1
+amr.max_level = 0
+amr.n_cell = 8 8 8 
+max_step = 1
